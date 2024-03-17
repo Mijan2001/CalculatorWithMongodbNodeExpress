@@ -11,18 +11,28 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://remove-server-calculator.vercel.app/login", {
-        email,
-        password,
-      })
-      .then((user) => {
-        if (user.data === "success") {
+      .post(
+        "https://remove-server-calculator.vercel.app/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true, // Send cookies with the request
+        }
+      )
+      .then((response) => {
+        if (response.data === "success") {
           alert("Login successfully");
           navigate("/home");
         } else {
-          alert("password is not correct");
+          alert("Password is not correct");
           navigate("/home");
         }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle error appropriately, e.g., show an error message to the user
       });
   };
 
@@ -55,7 +65,7 @@ const Login = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Login\\\\
+          Login
         </button>
         <br />
         <button className="btn btn-primary2">
