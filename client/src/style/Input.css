@@ -1,0 +1,19 @@
+#display {
+  width: 100%;
+  border: 3px solid rgb(19, 17, 6);
+  background: transparent;
+  height: 40px;
+  font-size: 40px;
+  color: #fff;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+@media only screen and (max-width: 600px) {
+  #display {
+    height: 40px;
+    font-size: 30px;
+  }
+}
