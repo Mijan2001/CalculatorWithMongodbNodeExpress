@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     axios
       .post(
-        "https://remove-server-calculator.vercel.app/login",
+        "http://remove-server-calculator.vercel.app/login",
         {
           email,
           password,

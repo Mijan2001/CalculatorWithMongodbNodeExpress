@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://remove-server-calculator.vercel.app/register", {
+      .post("http://remove-server-calculator.vercel.app/register", {
         name,
         email,
         password,
