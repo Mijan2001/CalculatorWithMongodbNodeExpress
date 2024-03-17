@@ -6,7 +6,12 @@ const cors = require("cors");
 const userRouter = require("./routes/userRouter");
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Allow requests from all origins
+    credentials: true, // Allow sending cookies
+  })
+);
 
 app.use(userRouter);
 

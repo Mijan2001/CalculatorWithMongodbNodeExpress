@@ -11,7 +11,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:8080/login", { email, password })
+      .post("https://remove-server-calculator.vercel.app/login", {
+        email,
+        password,
+      })
       .then((user) => {
         if (user.data === "success") {
           alert("Login successfully");
@@ -52,7 +55,7 @@ const Login = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Login
+          Login\\\\
         </button>
         <br />
         <button className="btn btn-primary2">

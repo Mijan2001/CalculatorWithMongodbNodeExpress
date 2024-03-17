@@ -12,7 +12,11 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:8080/register", { name, email, password })
+      .post("https://remove-server-calculator.vercel.app/register", {
+        name,
+        email,
+        password,
+      })
       .then((user) => {
         if (user.data === "Already Registered") {
           alert("Email Registered");
